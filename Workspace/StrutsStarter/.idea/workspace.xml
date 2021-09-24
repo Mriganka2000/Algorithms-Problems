@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b6d7ecd-d11a-463f-a8a4-070b6af0d757" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Binay Tree Longest Consequitive Sequence/Binay Tree Longest Consequitive Sequence.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Trapping Rain Water Leetcode/out/production/Trapping Rain Water Leetcode/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Trapping Rain Water Leetcode/out/production/Trapping Rain Water Leetcode/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Trapping Rain Water Leetcode/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Trapping Rain Water Leetcode/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1xomUt0XHOojw2358PopldDp6fI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b6d7ecd-d11a-463f-a8a4-070b6af0d757" name="Default Changelist" comment="" />
+      <created>1631030134597</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631030134597</updated>
+    </task>
+    <servers />
+  </component>
+</project>
