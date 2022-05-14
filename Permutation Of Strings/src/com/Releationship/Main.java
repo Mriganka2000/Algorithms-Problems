@@ -1,7 +1,5 @@
 package com.Releationship;
 
-import java.util.*;
-
 public class Main {
 
     public static void permutation(String str, int l, int r) {
@@ -26,6 +24,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        permutation("abcd", 0, 3);
+        permutation("abc", 0, 2);
     }
 }
