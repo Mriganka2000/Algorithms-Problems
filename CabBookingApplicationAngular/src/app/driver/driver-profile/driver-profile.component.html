@@ -1,0 +1,64 @@
+<div class="container">
+    <p class="text-left">
+        <a class="lead  btn-link" [routerLink]="['../update']">Edit</a>
+    </p>
+    <table class="table  table-borderless">
+        <tr>
+            <td>
+                Username
+            </td>
+            <td>
+                {{driver.username}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                {{driver.email}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                {{driver.password}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mobile Number
+            </td>
+            <td>
+                {{driver.mobileNumber}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                License No
+            </td>
+            <td>
+                {{driver.licenseNo}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CabId
+            </td>
+            <td>
+                {{driver.cab.cabId}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Rating
+            </td>
+            <td>
+                {{driver.rating}}
+            </td>
+        </tr>
+    </table>
+
+</div>

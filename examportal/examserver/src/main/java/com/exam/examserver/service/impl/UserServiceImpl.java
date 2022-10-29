@@ -6,9 +6,11 @@ import com.exam.examserver.repo.RoleRepository;
 import com.exam.examserver.repo.UserRepository;
 import com.exam.examserver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -35,6 +37,16 @@ public class UserServiceImpl implements UserService {
         }
 
         return local;
+    }
+
+    @Override
+    public User getUser(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(Long userId) {
+        this.userRepository.deleteById(userId);
     }
 
 }

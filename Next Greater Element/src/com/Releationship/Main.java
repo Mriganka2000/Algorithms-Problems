@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Main {
 
-    public static int[] findNextGreater(int arr[]) {
+    public static int[] findNextGreater(int[] arr) {
         int[] result = new int[arr.length];
         Stack<Integer> stack = new Stack<>();
         stack.push(0);

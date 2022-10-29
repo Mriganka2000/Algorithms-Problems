@@ -1,0 +1,63 @@
+<!-- <div class="container">
+
+
+  <div class="d-flex">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+      <li ngbNavItem="welcome">
+        <a ngbNavLink>Welcome</a>
+        <ng-template ngbNavContent>
+          <p class="display-3">
+            Admin Panel
+          </p>
+        </ng-template>
+      </li>
+      <li ngbNavItem="profile">
+        <a [routerLink]="[ './', {outlets:{'adminProfileRoute':['profile']}} ]" ngbNavLink>Profile</a>
+        <ng-template ngbNavContent>
+          <router-outlet name='adminProfileRoute'></router-outlet>
+        </ng-template>
+      </li>
+      <li ngbNavItem="manageAdmins">
+        <a [routerLink]="[ './', {outlets:{'manageAdminsRoute':['manageAdmins']}} ]" ngbNavLink>Manage Admins</a>
+        <ng-template ngbNavContent>
+          <router-outlet name='manageAdminsRoute'></router-outlet>
+        </ng-template>
+      </li>
+      <li ngbNavItem="manageCustomers">
+        <a [routerLink]="[ './', {outlets:{'manageCustomersRoute':['manageCustomers']}} ]" ngbNavLink>Manage
+          Customers</a>
+        <ng-template ngbNavContent>
+          <router-outlet name='manageCustomersRoute'></router-outlet>
+        </ng-template>
+      </li>
+      <li ngbNavItem="manageDrivers">
+        <a [routerLink]="[ './', {outlets:{'manageDriversRoute':['manageDrivers']}} ]" ngbNavLink>Manage Drivers</a>
+        <ng-template ngbNavContent>
+          <router-outlet name='manageDriversRoute'></router-outlet>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="ml-4"></div>
+  </div>
+
+</div> -->
+<nav>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['./profile']">Your Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['./manageAdmins']">Manage Admins</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['./manageCustomers']">Manage Customers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['./manageDrivers']">Manage Drivers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logOut()"> LogOut</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

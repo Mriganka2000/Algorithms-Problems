@@ -1,0 +1,79 @@
+<div class="container">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="assets/history.jfif" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="assets/history.jfif" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="assets/history.jfif" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="card-deck">
+    <div style="padding-top: 30px;" *ngFor='let trip of trips'>
+      <div  style="
+      margin: 0 auto; /* Added */
+      float: none; /* Added */
+      margin-bottom: 10px; /* Added */ "  class="card-deck shadow bg-white rounded" >
+
+        <div class="card border-primary" style="width: 30rem;">
+          <img class="card-img-top mx-auto d-block" src="assets/Cab_image.png" style="max-width: 35%;" alt="">
+
+          <div class="card-header text-center"> {{trip.fromLocation}} ➜ {{trip.toLocation}} </div>
+          <div class="card-body">
+
+            <h5 class="card-title text-center"> <img src="assets/icons/location-radius.svg" alt="" srcset="">
+              {{trip.fromLocation}} - {{trip.toLocation}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted text-center">
+              {{trip.distanceInKm}} Kms
+            </h6>
+            <h4 class="display-4 text-center">{{ trip.bill |currency:'INR'}}</h4>
+            <hr>
+            <div class="text-center">
+              <p class="card-text">
+               🟢  {{trip.fromDateTime | date:'medium'}}
+              </p>
+              <p class="card-text">
+               🔴  {{trip.toDateTime | date:'medium'}}
+              </p>
+            </div>
+            <!--Driver & Cab Details Below-->
+            <br>
+            <div class="container">
+              <p class="text-center"><strong>Driver Details</strong></p>
+              <p class="card-text text-center">
+                {{trip.driver.username}} 👨🏻‍✈️ | <code>❤ {{trip.driver.rating }} </code>
+              </p>
+              <p class="card-text text-center">
+                📞 <a href="tel:{{trip.driver.mobileNumber}} "> {{trip.driver.mobileNumber}}</a>
+              </p>
+              <p class="card-text text-center">
+                License : {{trip.driver.licenseNo}}
+              </p>
+
+              <p class="card-text text-center">
+                <b> Cab Details </b>
+              </p>
+              <p class="card-text text-center">
+                {{trip.driver.cab.carType}} | {{trip.driver.cab.perKmRate | currency:'INR'}}/Km
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

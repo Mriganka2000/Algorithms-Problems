@@ -1,0 +1,5 @@
+.jumbotron {
+  background-image: url("/assets/booking.jpg");
+  background-size: cover;
+  color: aliceblue;
+}

@@ -1,0 +1,183 @@
+<!-- <div class="container" style="padding-top: 20px;">
+  <div class="d-flex justify-content-start flex-row bd-highlight">
+    <ul ngbNav [routerLink]="['./profile']" #nav="ngbNav" [(activeId)]="active" class="nav-pills"
+        orientation="vertical">
+      <li ngbNavItem="top">
+        <a ngbNavLink>Welcome</a>
+        <ng-template ngbNavContent>
+          <div class="container">
+            <h3>
+              Welcome!
+            </h3>
+
+            <table>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <small>Pick-Up Point</small>
+                    <select class="form-control" [(ngModel)]='locationId'>
+                      <option *ngFor='let location of locationsArray' [value]="location.id"> {{location.from_Location}}
+                      </option>
+                    </select>
+                  </div>
+                </td>
+                <td>&nbsp;&nbsp; </td>
+                <td>
+                  <div *ngIf='locationId' class="form-group">
+                    <small>Destination</small>
+                    <select class="form-control" [(ngModel)]='distance'>
+                      <option *ngFor="let item of locationsArray | location : locationId" [value]="item.Distance">
+                        {{item.to_Location}}</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <h4 class="text-info" *ngIf='distance'>Distance : {{distance}} </h4>
+
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-sm-6" *ngFor="let item of drivers | calculateBill:distance">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Cab Name : {{item.cab.carType}} </h5>
+                    <p class="card-text">Driver Name : {{item.username}} </p>
+                    <p class="card-text">Mobile No : {{item.mobileNumber}} </p>
+                    <p class="card-text">License No : {{item.licenseNo}} </p>
+                    <p class="card-text">Ratings : {{item.rating}}</p>
+                    <a class="btn btn-danger" [routerLink]="['./history']" >Trip Cost : Rs. {{item.cab.perKmRate | number }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li ngbNavItem="profile">
+        <a ngbNavLink>Profile</a>
+        <ng-template ngbNavContent>
+          <router-outlet></router-outlet>
+        </ng-template>
+      </li>
+     <li ngbNavItem="middle">
+        <a ngbNavLink>History</a>
+        <ng-template ngbNavContent>
+          <div class="container">
+            <div class="row">
+              <div style="padding-top: 30px;">
+                <div *ngFor='let trip of trips'>
+
+                  <div class="card border-primary mb-3">
+                    <div class="card-header text-center"> {{trip.fromLocation}} ➜ {{trip.toLocation}} </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center"> <img src="assets/icons/location-radius.svg" alt="" srcset="">
+                        {{trip.fromLocation}} - {{trip.toLocation}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted text-center">
+                        {{trip.distanceInKm}} Kms | {{ trip.bill |currency:'INR'}}
+                      </h6>
+                      <hr>
+                      <div class="text-center">
+                        <p class="card-text">
+                          Start: {{trip.fromDateTime | date:'medium'}}
+                        </p>
+                        <p class="card-text">
+                          End: {{trip.toDateTime | date:'medium'}}
+                        </p>
+                      </div>
+
+                      <br>
+                      <div>
+                        <p class="text-center"><strong>Driver Details</strong></p>
+                        <p class="card-text text-center">
+                          {{trip.driver.username}} 👨🏻‍✈️ | <code>❤ {{trip.driver.rating }} </code>
+                        </p>
+                        <p class="card-text text-center">
+                          📞 <a href="tel:{{trip.driver.mobileNumber}} "> {{trip.driver.mobileNumber}}</a>
+                        </p>
+                        <p class="card-text text-center">
+                          License : {{trip.driver.licenseNo}}
+                        </p>
+
+                        <p class="card-text text-center">
+                          <b> Cab Details </b>
+                        </p>
+                        <p class="card-text text-center">
+                          {{trip.driver.cab.carType}} | {{trip.driver.cab.perKmRate | currency:'INR'}}/Km
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+      </li>
+      <li ngbNavItem="bottom">
+        <a ngbNavLink>Wallet</a>
+        <ng-template ngbNavContent>
+          <p>Will Be Added Soon</p>
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="ml-4"></div>
+  </div>
+</div>
+ -->
+ <nav>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['./profile']">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['./history']"> <i class="fa fa-history" aria-hidden="true"></i>Your Rides</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['./trip']">Book Now!</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logOut()"> LogOut</a>
+    </li>
+  </ul>
+ </nav>
+ <br>
+ <router-outlet></router-outlet>
+ <!-- <div class="row">
+  <div class="col-md-4 order-md-3 mb-4">
+    <div class="container">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Welcome!</span>
+
+      </h4>
+      <ul class="list-group mb-2" style="padding-right: 20px;">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0"> <a [routerLink]="['./profile']">Your Profile</a></h6>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0"><a [routerLink]="['./history']">History</a></h6>
+            <small class="text-muted">Trip History</small>
+          </div>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0"> <a [routerLink]="['./trip']">Book Now!</a></h6>
+            <small class="text-muted">Book A New Ride!</small>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-8 order-md-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+ -->

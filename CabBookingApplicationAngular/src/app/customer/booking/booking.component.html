@@ -1,0 +1,44 @@
+<ng-container *ngIf="bill && customerId && from_location && to_location; else elseTemplate">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h5>
+          <p style="float: left;">
+            <small>Pick Up </small> <br>
+            🟢 {{from_location |uppercase }}
+          </p>
+          <p style="float: right;">
+            <small>Drop</small> <br>
+            🔴 {{to_location | uppercase}}
+          </p>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          Fare : <p class="display-4">{{ bill| currency:'INR' }}/-</p>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      <ngb-progressbar [value]="progressbarValue" [type]="progressbarValue<=10? 'info':'success'" [striped]="true">
+        {{tripMesasge}}</ngb-progressbar>
+    </p>
+    <br>
+  </div>
+  <div *ngIf="showMessage" class="container">
+    <div class="container">
+      <p class="display-4 text-center">
+        Trip Completed
+      </p>
+    </div>
+
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container">
+    <p class="display-4 text-center">
+      Something's Missing
+    </p>
+  </div>
+</ng-template>

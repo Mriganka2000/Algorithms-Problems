@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-auto">
+      <div class="container" style="padding-top: 10px;">
+        <h1>Driver Log In  &nbsp; &nbsp;&nbsp; &nbsp;</h1>
+        <p class="lead sm">Welcome Back! 🎉</p>
+        <hr>
+        <form [formGroup]="loginForm" (ngSubmit)="logIn()" class="needs-validation">
+          <div class="form-group w-70">
+            <label for="Username"><i class="fa fa-user"> </i> Username</label>
+            <input type="text" formControlName='username' class="form-control"
+                [ngClass]="{'is-invalid': !loginForm.controls['username'].valid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched),'is-valid': loginForm.controls['username'].valid}"
+                id="Username" placeholder="Username" required>
+            <span
+                *ngIf="!loginForm.controls['username'].valid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+                class="badge badge-danger">Username Required</span>
+          </div>
+          <div class="form-group w-70">
+            <label for="inputPassword4"><i class="fa fa-key"> </i> Password</label>
+            <input type="password" formControlName='password' class="form-control"
+                [ngClass]="{'is-invalid': !loginForm.controls['password'].valid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched),'is-valid': loginForm.controls['password'].valid}"
+                id="inputPassword4" placeholder="Password" required>
+            <span
+                *ngIf="!loginForm.controls['password'].valid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+                class="badge badge-danger">Password Required</span>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]='!loginForm.valid'>Log in</button>
+        </form>
+      </div>
+      <br>
+      <div class="text-right">
+        New User? Sign Up <a [routerLink]="['/signup/customer']">here</a>
+      </div>
+      <div *ngIf='message'>
+        <div class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

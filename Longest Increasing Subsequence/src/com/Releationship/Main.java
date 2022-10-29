@@ -29,7 +29,16 @@ public class Main {
             }
         }
 
-        System.out.println("The max length is :- " + list[n-1]);
-    }
+        int max = list[0];
+        for (int i = 0; i < list.length; i++) {
+            if (max < list[i]) {
+                max = list[i];
+            }
+        }
 
+        System.out.println("The max length is :- " + max);
+    }
 }
+
+//9
+//2 10 5 1 8 6 6 6 5

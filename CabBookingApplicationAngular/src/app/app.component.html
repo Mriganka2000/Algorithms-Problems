@@ -1,0 +1,65 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<div class="d-flex flex-column  sticky-footer-wrapper min-vh-100">
+
+  <div class="d-flex flex-column sticky-footer-wrapper min-vh-100 ">
+    <div class="header-firstnav">
+      <nav class="navbar navbar-expand-lg  navbar-dark bg-dark mb-3 " style="color: aliceblue;">
+        <a class="navbar-brand" [routerLink]="['./home']">
+          <img src="assets/Brand.jpeg" width="160" alt="Cab" class="d-inline-block align-top">
+        </a>
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+          &#9776;
+        </button>
+
+
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse nav justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['./home']" (click)="isMenuCollapsed = true"><i class="fa fa-home"></i>
+                Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['./about']" (click)="isMenuCollapsed = true"> <i
+                    class="fa fa-exclamation-circle"></i> About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main class="flex-fill">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- FOOTER =============================-->
+    <footer>
+      <div class="footer text-center">
+        <div class="container">
+          <div class="col">
+            <p class="footernote">
+              Connect with IndiGO
+            </p>
+            <ul class="social-iconsfooter">
+              <li><a href="tel:+4548578483"><i class="fa fa-phone">Call me</i></a></li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a>
+
+              </li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            </ul>
+            <p>
+              2021 Book your cab<br />
+              Adventure Is Out There
+
+            </p>
+            <h1><b>IndiGO cabs</b></h1>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" [routerLink]="['home']">INdiGoCabs.com</a>
+      </div>
+    </footer>
+  </div>
+</div>
